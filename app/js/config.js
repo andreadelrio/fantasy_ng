@@ -9,6 +9,10 @@ app.config(['$routeProvider',
       .when('/',        { templateUrl: 'views/default.html' })
       .when('/signin',  { templateUrl: 'views/users/signin.html' })
       .when('/signup',  { templateUrl: 'views/users/signup.html' })
+      .when('/nflteams',            { templateUrl: 'views/nfl/list.html'
+                                    , authRequired: true })
+      .when('/nflteams/:nflTeamId', { templateUrl: 'views/nfl/view.html'
+                                    , authRequired: true })
       .otherwise(       { redirectTo: '/' });
     }])
   
@@ -21,6 +25,6 @@ app.config(['$routeProvider',
 
   // your Firebase URL goes here
   // should look something like: https://blahblahblah.firebaseio.com
-  .constant('FBURL', '<<<FIREBASE_URL_GOES_HERE>>>')
+  .constant('FBURL', 'https://fiery-inferno-6041.firebaseio.com/')
 
 
